@@ -94,8 +94,91 @@ i = 0
 while i < len(luvut):
     print(luvut[i])
     i = i + 1
+tottavaiei = True # python on dynaamisesti tyypitetty, nyt boolean
+tottavaiei = "True" # nyt string
+print(type(tottavaiei))
 
-print ("______________________")
+viikonpaivat = ["Maanantai", "Tiistai"]
+print(viikonpaivat)
+
+print("-----------------------")
+print("Muutamia hyödyllisia funktiota tulevaisuutta varten")
+print("-----------------------")
+
+# listoille toimii mm. tämänlaiset funktiot
+# len, sum, min, max, count
+luvut = [2,4,6,5,2,7,2,7]
+print(len(luvut)) # pituus
+print(sum(luvut)) # lukujen summa
+print(min(luvut)) # pienin numero
+print(max(luvut)) # isoin numeroa
+print(luvut.count(2)) # kuinka monta lukua 2 listassa on
+
+print("-----------------------")
+print("Miten käydään lista läpi iteroimalla")
+print("-----------------------")
+
+luvut[2]
+
+# luvut = [2,4,6,5,2,7,2,7]
+
+i = 0
+while i < len(luvut):
+    # print(i)
+    print(luvut[i])
+    # i = i + 1
+    i += 1
+
+print("-----------------------")
+# käydä listan läpi alkio alkiolta
+
+
+for kirjain in "abcdefg":
+    print(kirjain)
+
+print("-----------------------")
+
+for alkio in [1, 2, 3, 4, 5, 6]:
+    print(alkio)
+
+print("-----------------------")
+
+for luku in luvut:
+    print(luku)
+
+print("-----------------------")
+
+# tässä tapauksessa kaupunki on kierrosmuuttuja
+for kaupunki in kaupungit:
+    print(kaupunki)
+
+print("-----------------------")
+
+for numero in range(5):
+    print(numero)
+
+for n in range(4,80, 2):
+    print(n)
+
+print("-----------------------")
+print("Nurinpäin")
+
+for n in range(50, 0, -2):
+    print(n)
+
+print("-----------------------")
+
+#luvut = [2,4,6,5,2,7,2,7]
+luvut_listan_pituus = len(luvut)
+for n in range(luvut_listan_pituus):
+    # print(n) -> tämä on iteraattori
+    print(luvut[n])
+
+print("-----------------------")
+# printataan vain 3
+for n in range(3):
+    print(kaupungit[n])
+print("-----------------------")
 for luku in luvut:
     print(luku)
 
