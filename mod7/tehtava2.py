@@ -28,6 +28,6 @@ while kysy:
     else:
         print(f"Uusi nimi. {nimi} lisätty listaan.")
         nimijoukko.add(nimi)
-print("Kaikki syötetyt nimet: ")
+print("Kaikki syötetyt nimet:❤️")
 for nimi in nimijoukko:
     print(nimi)
