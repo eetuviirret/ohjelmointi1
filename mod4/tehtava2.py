@@ -16,3 +16,10 @@ while ohjelma_paalla == True:
         sentit = tuumat * 2,54
         print(sentit)
 
+nyky = input(
+suurin = nyky
+pienin = nyky
+
+while nyky != ""
+    nyky = input
+)
