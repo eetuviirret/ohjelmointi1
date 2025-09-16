@@ -8,6 +8,8 @@ Toisaalta esimerkiksi luku 21 ei ole alkuluku,
 koska se voidaan jakaa tasan myös luvulla 3 tai luvulla 7.
 '''
 
+''''''
+
 luku = int(input("Anna kokonaisluku, tarkistetaan onko se alkuluku: "))
 jaollinen = []
 
