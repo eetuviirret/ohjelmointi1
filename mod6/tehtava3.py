@@ -11,7 +11,15 @@ def usa_gal_to_l(gal):
     litre = gal*3.78541
     return litre
 
-gal = int(input("Anna gallonit: "))
+'''gal = 0
 while gal >= 0:
     gal = int(input("Anna gallonit: "))
+    print(usa_gal_to_l(gal))'''
+
+#tai
+
+gal = int(input("Anna gallonit: "))
+while gal >= 0:
     print(usa_gal_to_l(gal))
+    gal = int(input("Anna gallonit: "))
+
