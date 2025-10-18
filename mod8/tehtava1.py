@@ -15,4 +15,8 @@ connection = mysql.connector.connect(
 icao_koodi = input("Icao-koodi: ")
 
 cursor = connection.cursor()
-cursor.execute("SELECT name, iso_region FROM airport WHERE airport.ident = icao_koodi)
+cursor.execute("SELECT name, iso_region FROM airport WHERE airport.ident = {icao_koodi}")
+result = cursor.fetchall()
+print(result)
+
+
