@@ -15,8 +15,14 @@ connection = mysql.connector.connect(
 icao_koodi = input("Icao-koodi: ")
 
 cursor = connection.cursor()
-cursor.execute("SELECT name, iso_region FROM airport WHERE airport.ident = {icao_koodi}")
+sql = f"SELECT name, municipality FROM airport WHERE airport.ident = '{icao_koodi}'"
+cursor.execute(sql)
 result = cursor.fetchall()
-print(result)
+print(f"Lentokenttä: {result[0][0]}, Kunta: {result[0][1]}")
+
+# jos tulosjoukko on tyhjä
+if result:  # sama kuin result != None:
+    return result[0]
+return "Ei löydy"
 
 
