@@ -20,9 +20,5 @@ cursor.execute(sql)
 result = cursor.fetchall()
 print(f"Lentokenttä: {result[0][0]}, Kunta: {result[0][1]}")
 
-# jos tulosjoukko on tyhjä
-if result:  # sama kuin result != None:
-    return result[0]
-return "Ei löydy"
 
 
