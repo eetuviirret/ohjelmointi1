@@ -73,7 +73,7 @@ Tämä tehdään kutsumalla kiihdytä-metodia.
 Kaikkia autoja käsketään liikkumaan yhden tunnin ajan.
 Tämä tehdään kutsumalla kulje-metodia.
 Kilpailu jatkuu, kunnes jokin autoista on edennyt vähintään 10000 kilometriä.
-Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna.
+Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna.m
 '''
 
 race_cars =  []
