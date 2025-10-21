@@ -6,11 +6,12 @@ Kirjoita pääohjelma, jossa luot uuden auton (rekisteritunnus ABC-123, huippuno
 Tulosta pääohjelmassa sen jälkeen luodun auton kaikki ominaisuudet.'''
 
 class Car:
-    def __init__(self, register_number, top_speed):
-        self.speed = 0
-        self.trip = 0
+    def __init__(self, register_number, top_speed, speed = 0, trip = 0):
         self.register_number = register_number
         self.top_speed = top_speed
+        self.speed = speed
+        self.trip = trip
+
 
     def accelerate(self, acceleration):
         self.speed = self.speed + acceleration
@@ -19,8 +20,8 @@ class Car:
         elif self.speed < 0:
             self.speed = 0
 
-    def get_speed(self):
-        return self.speed
+    def car_run(self, time):
+        self.trip = self.trip + self.speed * time
 
 car1 = Car("ABC-123", 142)
 
@@ -49,14 +50,37 @@ car1.accelerate(-200)
 
 print(f"Auton 1 nopeus on {car1.speed}km/h")
 
-'''
-cars = [Car(), Car()]
-cars[0].accelerate()
-cars[0].accelerate()
+'''Laajenna ohjelmaa siten, että mukana on kulje-metodi,
+joka saa parametrinaan tuntimäärän. Metodi kasvattaa kuljettua matkaa sen verran
+kuin auto on tasaisella vauhdilla annetussa tuntimäärässä edennyt.
+Esimerkki: auto-olion tämänhetkinen kuljettu matka on 2000 km.
+Nopeus on 60 km/h. Metodikutsu auto.kulje(1.5) kasvattaa kuljetun matkan lukemaan 2090 km.'''
 
-cars = []
+car2 = Car("ABC-456", 142, 60, 2000)
+car2.car_run(1.5)
+print(car2.trip)
+
+'''Nyt ohjelmoidaan autokilpailu. 
+Uuden auton kuljettu matka alustetaan automaattisesti nollaksi.
+Tee pääohjelman alussa lista, joka koostuu kymmenestä toistorakenteella luodusta auto-oliosta.
+Jokaisen auton huippunopeus arvotaan 100 km/h ja 200 km/h väliltä.
+Rekisteritunnus luodaan seuraavasti "ABC-1", "ABC-2" jne. Sitten kilpailu alkaa.
+Kilpailun aikana tehdään tunnin välein seuraavat toimenpiteet:
+
+Jokaisen auton nopeutta muutetaan siten, että nopeuden muutos arvotaan väliltä -10 ja +15 km/h väliltä.
+Tämä tehdään kutsumalla kiihdytä-metodia.
+
+Kaikkia autoja käsketään liikkumaan yhden tunnin ajan.
+Tämä tehdään kutsumalla kulje-metodia.
+Kilpailu jatkuu, kunnes jokin autoista on edennyt vähintään 10000 kilometriä.
+Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna.
+'''
+
+race_cars =  []
 for c in range (9):
     cars.append(Car())
+
+
 for car in Cars:
     print(f"Auto {car.register_number} nopeus on {car.speed}km/h")
-'''
+
