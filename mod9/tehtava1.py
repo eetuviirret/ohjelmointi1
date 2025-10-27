@@ -7,7 +7,7 @@ Tulosta pääohjelmassa sen jälkeen luodun auton kaikki ominaisuudet.'''
 
 class Car:
     def __init__(self, register_number, top_speed, speed = 0, trip = 0):
-        self.register_number = register_number
+        self.register_number = f"ABC-{register_number}"
         self.top_speed = top_speed
         self.speed = speed
         self.trip = trip
@@ -23,7 +23,7 @@ class Car:
     def car_run(self, time):
         self.trip = self.trip + self.speed * time
 
-car1 = Car("ABC-123", 142)
+car1 = Car("123", 142)
 
 print(car1.speed)
 print(car1.trip)
@@ -78,7 +78,8 @@ Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muoto
 
 race_cars =  []
 for c in range (9):
-    cars.append(Car())
+    race_cars.append(Car())
+    
 
 
 for car in Cars:
