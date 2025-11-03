@@ -1,17 +1,63 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
 
-.nav_button {
+ul li {
+    float: right;
+}
 
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
 
 }
+
+ul li a:hover {
+    background-color: black;
+
+}
+#nav_logo{
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    float: left;
+}
+.logo_image{
+    width:30px;
+    padding:12px 15px;
+}
+.nav_button {
+    border: none;
+    color: #7caa2e;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    padding: 20px 10px;
+    width:15%;
+}
 .nav_button:hover {
-    color:darkgreen;
+    color:white;
+    background-color: black;
+}
+
+body{
+    background-image: url("lehdet_erol-ahmed.jpg");
+    width:100%;
+    background-size:cover;
 }
 .background_image {
     width:100%
 }
 
 h1 {
-    color: red;
+    color: white;
     font-size: 30px;
     font-family: Garamond;
+    text-align: center;
 }
