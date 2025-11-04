@@ -4,6 +4,8 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333333;
+
+
 }
 
 ul li {
@@ -21,9 +23,10 @@ ul li a:hover {
     background-color: black;
 
 }
+nav {
+    width: cover;
+}
 #nav_logo{
-    border: none;
-    color: white;
     text-align: center;
     display: inline-block;
     float: left;
@@ -40,6 +43,7 @@ ul li a:hover {
     font-size: 16px;
     padding: 20px 10px;
     width:15%;
+    float: right;
 }
 .nav_button:hover {
     color:white;
@@ -48,16 +52,44 @@ ul li a:hover {
 
 body{
     background-image: url("lehdet_erol-ahmed.jpg");
+    background-color: #333333;
+    background-repeat: no-repeat;
     width:100%;
     background-size:cover;
+    margin: 0px;
 }
 .background_image {
     width:100%
+    opacity:10%;
 }
+main {
 
+    margin-top: 80px;
+}
 h1 {
     color: white;
     font-size: 30px;
     font-family: Garamond;
     text-align: center;
+}
+.home_image{
+    display: block;
+    margin: auto;
+    width:80%;
+
+}
+p {
+    color:white;
+}
+.home_paragraph{
+    display: block;
+    margin: auto;
+    width:80%;
+
+}
+.products{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    background-color: #333333;
 }
