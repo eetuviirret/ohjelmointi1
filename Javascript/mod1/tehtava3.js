@@ -7,3 +7,4 @@
  document.querySelector('#product').innerHTML = 'product: ' + p;
  document.querySelector('#average').innerHTML = 'average: ' + a;
 
+//kesken
