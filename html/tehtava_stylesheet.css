@@ -57,7 +57,7 @@ body{
     margin: 0px;
 }
 .background_image {
-    width:100%
+    width:100%;
     opacity:10%;
 }
 main {
@@ -67,7 +67,7 @@ main {
 h1 {
     color: white;
     font-size: 30px;
-    font-family: Garamond;
+    font-family: Garamond, sans-serif;
     text-align: center;
 }
 .home_image{
@@ -90,4 +90,5 @@ p {
     grid-template-columns: auto auto auto;
     padding: 10px;
     background-color: #333333;
+    /*flex-box*/
 }
