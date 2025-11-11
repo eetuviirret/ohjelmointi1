@@ -106,7 +106,3 @@ for r in race_cars:
 
 
 print(f"Winner is {winner}")
-'''
-for car in Cars:
-    print(f"Auto {car.register_number} nopeus on {car.speed}km/h")'''
-
