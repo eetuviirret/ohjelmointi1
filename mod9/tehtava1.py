@@ -1,3 +1,5 @@
+import random
+
 '''Kirjoita Auto-luokka, jonka ominaisuuksina ovat rekisteritunnus,
 huippunopeus, tämänhetkinen nopeus ja kuljettu matka. Kirjoita luokkaan alustaja,
 joka asettaa ominaisuuksista kaksi ensin mainittua parametreina saatuihin arvoihin.
@@ -75,13 +77,36 @@ Tämä tehdään kutsumalla kulje-metodia.
 Kilpailu jatkuu, kunnes jokin autoista on edennyt vähintään 10000 kilometriä.
 Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna.m
 '''
-
+print("---------------------------------")
+print("Race begins!")
+print("---------------------------------")
 race_cars =  []
+competition = True
 for c in range (9):
-    race_cars.append(Car())
-    
+    register_number = c + 1
+    race_cars.append(Car(f"{register_number}", random.randint(100,200), 0, 0))
+
+while competition:
+    for r in race_cars:
+        r.accelerate(random.randint(-10,15))
+        r.car_run(1)
+        if r.trip >= 10000:
+            competition = False
 
 
+winner = 0
+for r in race_cars:
+    print(f"Car's register number is {r.register_number}")
+    print(f"Car's top speed is {r.top_speed}km/h")
+    print(f"Car's current speed is {r.speed}km/h")
+    print(f"Car's trip is {r.trip}km")
+    print(f"----------------------------------------")
+    if r.trip >= 10000:
+        winner = r.register_number
+
+
+print(f"Winner is {winner}")
+'''
 for car in Cars:
-    print(f"Auto {car.register_number} nopeus on {car.speed}km/h")
+    print(f"Auto {car.register_number} nopeus on {car.speed}km/h")'''
 
