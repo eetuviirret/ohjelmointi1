@@ -26,7 +26,7 @@ class Car:
         self.trip = self.trip + self.speed * time
 
 class race:
-    def __init__(self, race_name, length)
+    def __init__(self, race_name, length):
         self.race_name = race_name
         self.length = length
         self.car_list = []
