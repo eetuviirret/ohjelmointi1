@@ -211,17 +211,19 @@ class race:
                 race_over = False
 '''
 
-romuralli = race("Suuri romuralli", 8000)
+romuralli = race("Suuri romuralli", 100)
 
 for c in range (9):
     register_number = c + 1
     romuralli.race_cars.append(Car(f"{register_number}", random.randint(100,200), 0, 0))
 
 over = False
-
-if over == False:
+hour = 0
+while Car.trip > race.legth:
     romuralli.hour_pass()
-    romuralli.print_present_situation()
-    romuralli.race_over()
+    hour += 1
+    if hour % 10 == 0:
+        romuralli.print_present_situation()
+    over = romuralli.race_over()
 else:
     romuralli.print_present_situation()
