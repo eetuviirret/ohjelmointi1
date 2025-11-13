@@ -1,4 +1,5 @@
 import random
+from operator import truediv
 
 '''Kirjoita Auto-luokka, jonka ominaisuuksina ovat rekisteritunnus,
 huippunopeus, tämänhetkinen nopeus ja kuljettu matka. Kirjoita luokkaan alustaja,
@@ -29,9 +30,28 @@ class race:
     def __init__(self, race_name, length):
         self.race_name = race_name
         self.length = length
-        self.car_list = []
+        self.race_cars = []
 
     def hour_pass(self):
+        for r in self.race_cars:
+            r.accelerate(random.randint(-10, 15))
+            r.car_run(1)
+
+    def print_present_situation(self):
+        for r in self.race_cars:
+            print(f"Car's register number is {r.register_number}")
+            print(f"Car's top speed is {r.top_speed}km/h")
+            print(f"Car's current speed is {r.speed}km/h")
+            print(f"Car's trip is {r.trip}km")
+            print(f"----------------------------------------")
+
+    def race_over(self):
+        For i in self.race_cars:
+            if i >= self.length:
+                race_over = True
+            else:
+                race_over = False
+
 
 car1 = Car("123", 142)
 
@@ -85,7 +105,7 @@ Tämä tehdään kutsumalla kulje-metodia.
 Kilpailu jatkuu, kunnes jokin autoista on edennyt vähintään 10000 kilometriä.
 Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna.m
 '''
-print("---------------------------------")
+'''print("---------------------------------")
 print("Race begins!")
 print("---------------------------------")
 race_cars =  []
@@ -113,7 +133,7 @@ for r in race_cars:
         winner = r.register_number
 
 
-print(f"Winner is {winner}")
+print(f"Winner is {winner}")'''
 
 '''Tehtävä on jatkoa aiemmalle autokilpailutehtävälle. 
 Kirjoita Kilpailu-luokka, jolla on ominaisuuksina kilpailun nimi,
@@ -141,3 +161,22 @@ kilpailu_ohi-metodin avulla, onko kilpailu ohi.
 Ajantasainen tilanne tulostetaan tulosta tilanne-metodin
 avulla kymmenen tunnin välein sekä kertaalleen sen jälkeen,
 kun kilpailu on päättynyt.'''
+
+print("------Suuri romuralli----------------")
+
+
+
+romuralli = race("Suuri romuralli", 8000)
+
+for c in range (9):
+    register_number = c + 1
+    romuralli.race_cars.append(Car(f"{register_number}", random.randint(100,200), 0, 0))
+
+race_over = False
+
+if race_over == False:
+    romuralli.hour_pass()
+    romuralli.print_present_situation()
+    romuralli.race_over()
+else:
+    romuralli.print_present_situation(self)

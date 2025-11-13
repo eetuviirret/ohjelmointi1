@@ -111,9 +111,12 @@ print(talo2.hissit[0].nykyinen_kerros)
 print(talo2.hissit[1].nykyinen_kerros)
 print(talo2.hissit[2].nykyinen_kerros)
 
-'''jos haluaa että hiisillä on esimerkiksi oletus ylinkerros, pitää antaa kaikki kysyttävät parametrit ennen oletusarvoa
-huomioi että tällöin pitäisi olla myös parmetri viimeisenä talo- määrityksessä. 
-Olisi siis jäkevämpää luoda talolle oletettu ylin kerros. Mutta esimerkkinä oletusarvoista kumminkin:'''
+'''jos haluaa että hiisillä on esimerkiksi oletus ylinkerros, 
+pitää antaa kaikki kysyttävät parametrit ennen oletusarvoa
+huomioi että tällöin pitäisi olla myös parmetri viimeisenä 
+talo- määrityksessä. 
+Olisi siis jäkevämpää luoda talolle oletettu ylin kerros. 
+Mutta esimerkkinä oletusarvoista kumminkin:'''
 hissi4 = Hissi(1)
 hissi4.siirry_kerrokseen(4)
 print(hissi4.nykyinen_kerros)
