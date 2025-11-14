@@ -36,6 +36,7 @@ class race:
         for r in self.race_cars:
             r.accelerate(random.randint(-10, 15))
             r.car_run(1)
+            print(r.trip)
 
 
     def print_present_situation(self):
@@ -55,13 +56,13 @@ class race:
             else:
                 return None
 
-
+'''
 car1 = Car("123", 142)
 
 print(car1.speed)
 print(car1.trip)
 print(car1.top_speed)
-print(car1.register_number)
+print(car1.register_number)'''
 
 '''Jatka ohjelmaa kirjoittamalla Auto-luokkaan kiihdytä-metodi,
 joka saa parametrinaan nopeuden muutoksen (km/h).
@@ -74,24 +75,24 @@ ja lopuksi +50 km/h. Tulosta tämän jälkeen auton nopeus.
 Tee sitten hätäjarrutus määräämällä nopeuden muutos -200 km/h
 ja tulosta uusi nopeus. Kuljettua matkaa ei tarvitse vielä päivittää.
 '''
-
+'''
 car1.accelerate(30)
 car1.accelerate(70)
 print(f"Auton 1 nopeus on {car1.speed}km/h")
 
 car1.accelerate(-200)
 
-print(f"Auton 1 nopeus on {car1.speed}km/h")
+print(f"Auton 1 nopeus on {car1.speed}km/h")'''
 
 '''Laajenna ohjelmaa siten, että mukana on kulje-metodi,
 joka saa parametrinaan tuntimäärän. Metodi kasvattaa kuljettua matkaa sen verran
 kuin auto on tasaisella vauhdilla annetussa tuntimäärässä edennyt.
 Esimerkki: auto-olion tämänhetkinen kuljettu matka on 2000 km.
 Nopeus on 60 km/h. Metodikutsu auto.kulje(1.5) kasvattaa kuljetun matkan lukemaan 2090 km.'''
-
+'''
 car2 = Car("ABC-456", 142, 60, 2000)
 car2.car_run(1.5)
-print(car2.trip)
+print(car2.trip)'''
 
 '''Nyt ohjelmoidaan autokilpailu. 
 Uuden auton kuljettu matka alustetaan automaattisesti nollaksi.
@@ -212,14 +213,15 @@ class race:
                 race_over = False
 '''
 
-romuralli = race("Suuri romuralli", 8000)
+romuralli = race("Suuri romuralli", 100)
 
 for c in range (9):
     register_number = c + 1
     romuralli.race_cars.append(Car(f"{register_number}", random.randint(100,200), 0, 0))
-print(romuralli.race_cars)
 
-while romuralli.race_over == False:
+
+
+while romuralli.race_over() == False:
     for r in romuralli.race_cars:
         romuralli.hour_pass()
         romuralli.print_present_situation()
