@@ -222,6 +222,7 @@ for c in range (9):
 
 
 while romuralli.race_over() == False:
+
     for r in romuralli.race_cars:
         romuralli.hour_pass()
         romuralli.print_present_situation()
