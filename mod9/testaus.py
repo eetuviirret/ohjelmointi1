@@ -37,6 +37,7 @@ class race:
             r.accelerate(random.randint(-10, 15))
             r.car_run(1)
 
+
     def print_present_situation(self):
         for r in self.race_cars:
             print(f"Car's register number is {r.register_number}")
@@ -48,11 +49,11 @@ class race:
     def race_over(self):
         for i in self.race_cars:
             if i.trip >= self.length:
-                over = True
-                return
+                return True
+            elif i.trip < self.length:
+                return False
             else:
-                over = False
-                return
+                return None
 
 
 car1 = Car("123", 142)
@@ -165,7 +166,7 @@ avulla kymmenen tunnin välein sekä kertaalleen sen jälkeen,
 kun kilpailu on päättynyt.'''
 
 print("------Suuri romuralli----------------")
-
+'''
 class Car:
     def __init__(self, register_number, top_speed, speed = 0, trip = 0):
         self.register_number = f"ABC-{register_number}"
@@ -209,20 +210,26 @@ class race:
                 race_over = True
             else:
                 race_over = False
+'''
 
-romuralli = race("Suuri romuralli", 100)
+romuralli = race("Suuri romuralli", 8000)
 
 for c in range (9):
     register_number = c + 1
     romuralli.race_cars.append(Car(f"{register_number}", random.randint(100,200), 0, 0))
+print(romuralli.race_cars)
 
-over = False
-hour = 0
-while Car.trip > race.legth:
-    romuralli.hour_pass()
-    hour += 1
-    if hour % 10 == 0:
+while romuralli.race_over == False:
+    for r in romuralli.race_cars:
+        romuralli.hour_pass()
         romuralli.print_present_situation()
-    over = romuralli.race_over()
-else:
+        romuralli.race_over()
+
+''' 
+romuralli.race_over()
+if romuralli.race_over == False:
+    romuralli.hour_pass()
     romuralli.print_present_situation()
+
+else:
+    romuralli.print_present_situation()'''
