@@ -48,13 +48,12 @@ class race:
             print(f"----------------------------------------")
 
     def race_over(self):
+        winner = False
         for i in self.race_cars:
             if i.trip >= self.length:
-                return True
-            elif i.trip < self.length:
-                return False
-            else:
-                return None
+                winner = True
+        return winner
+
 
 '''
 car1 = Car("123", 142)
@@ -222,11 +221,8 @@ for c in range (9):
 
 
 while romuralli.race_over() == False:
-
-    for r in romuralli.race_cars:
-        romuralli.hour_pass()
-        romuralli.print_present_situation()
-        romuralli.race_over()
+    romuralli.hour_pass()
+    romuralli.print_present_situation()
 
 ''' 
 romuralli.race_over()

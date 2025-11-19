@@ -218,7 +218,7 @@ for c in range (9):
 
 over = False
 hour = 0
-while Car.trip > race.length:
+while r.trip > race.legth:
     romuralli.hour_pass()
     hour += 1
     if hour % 10 == 0:
