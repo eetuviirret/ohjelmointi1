@@ -1,17 +1,28 @@
-ul {
+nav {
+    background-color: #333333;
+    width: 100%;
+}
+.nav_ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;
+    display: grid;
+    grid-template-columns: 10% 30% 20% 20% 20%;
 }
 
-ul li {
-    float: right;
+.nav_ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-ul li a {
-    display: block;
+.nav_ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
     color: white;
     text-align: center;
 
@@ -20,20 +31,31 @@ ul li a {
 ul li a:hover {
     background-color: black;
 
+
 }
-nav {
-    width: cover;
-}
+
+
 #nav_logo{
-    text-align: center;
-    display: inline-block;
-    float: left;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
-.logo_image{
-    width:30px;
-    padding:12px 15px;
+.logo_image {
+    width: 30px;
+    padding: 12px 15px;
 }
-.nav_button {
+.nav_home{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.nav_products{
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.nav_contact{
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+button {
     border: none;
     color: #7caa2e;
     text-align: center;
