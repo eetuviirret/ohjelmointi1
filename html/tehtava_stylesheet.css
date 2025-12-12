@@ -93,11 +93,14 @@ h1 {
     font-family: Garamond, sans-serif;
     text-align: center;
 }
+p {
+    color:white;
+    font-family: Garamond, sans-serif;
+}
 .home_image{
     display: block;
     margin: auto;
     width: 87%;
-
 }
 p {
     color:white;
