@@ -29,7 +29,7 @@ for  (let i=0; i<=2; i++) {
     targetList.appendChild(bullet)
 
     if (i === 1){
-        bullet.classList.add('my-list');
+        bullet.classList.add('my-item');
     }
 }
 
