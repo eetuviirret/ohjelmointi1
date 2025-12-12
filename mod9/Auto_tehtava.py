@@ -177,12 +177,3 @@ while romuralli.race_over() == False:
     romuralli.hour_pass()
     romuralli.print_present_situation()
 
-''' 
-ylimääräinen kokeilu:
-romuralli.race_over()
-if romuralli.race_over == False:
-    romuralli.hour_pass()
-    romuralli.print_present_situation()
-
-else:
-    romuralli.print_present_situation()'''
