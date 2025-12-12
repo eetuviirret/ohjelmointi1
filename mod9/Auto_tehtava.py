@@ -36,6 +36,8 @@ class race:
         for r in self.race_cars:
             r.accelerate(random.randint(-10, 15))
             r.car_run(1)
+            '''print(r.trip)'''
+
 
     def print_present_situation(self):
         for r in self.race_cars:
@@ -46,21 +48,20 @@ class race:
             print(f"----------------------------------------")
 
     def race_over(self):
+        winner = False
         for i in self.race_cars:
             if i.trip >= self.length:
-                over = True
-                return
-            else:
-                over = False
-                return
+                winner = True
+        return winner
 
 
+'''
 car1 = Car("123", 142)
 
 print(car1.speed)
 print(car1.trip)
 print(car1.top_speed)
-print(car1.register_number)
+print(car1.register_number)'''
 
 '''Jatka ohjelmaa kirjoittamalla Auto-luokkaan kiihdytä-metodi,
 joka saa parametrinaan nopeuden muutoksen (km/h).
@@ -73,24 +74,24 @@ ja lopuksi +50 km/h. Tulosta tämän jälkeen auton nopeus.
 Tee sitten hätäjarrutus määräämällä nopeuden muutos -200 km/h
 ja tulosta uusi nopeus. Kuljettua matkaa ei tarvitse vielä päivittää.
 '''
-
+'''
 car1.accelerate(30)
 car1.accelerate(70)
 print(f"Auton 1 nopeus on {car1.speed}km/h")
 
 car1.accelerate(-200)
 
-print(f"Auton 1 nopeus on {car1.speed}km/h")
+print(f"Auton 1 nopeus on {car1.speed}km/h")'''
 
 '''Laajenna ohjelmaa siten, että mukana on kulje-metodi,
 joka saa parametrinaan tuntimäärän. Metodi kasvattaa kuljettua matkaa sen verran
 kuin auto on tasaisella vauhdilla annetussa tuntimäärässä edennyt.
 Esimerkki: auto-olion tämänhetkinen kuljettu matka on 2000 km.
 Nopeus on 60 km/h. Metodikutsu auto.kulje(1.5) kasvattaa kuljetun matkan lukemaan 2090 km.'''
-
+'''
 car2 = Car("ABC-456", 142, 60, 2000)
 car2.car_run(1.5)
-print(car2.trip)
+print(car2.trip)'''
 
 '''Nyt ohjelmoidaan autokilpailu. 
 Uuden auton kuljettu matka alustetaan automaattisesti nollaksi.
@@ -166,63 +167,22 @@ kun kilpailu on päättynyt.'''
 
 print("------Suuri romuralli----------------")
 
-class Car:
-    def __init__(self, register_number, top_speed, speed = 0, trip = 0):
-        self.register_number = f"ABC-{register_number}"
-        self.top_speed = top_speed
-        self.speed = speed
-        self.trip = trip
-
-
-    def accelerate(self, acceleration):
-        self.speed = self.speed + acceleration
-        if self.speed > self.top_speed:
-            self.speed = self.top_speed
-        elif self.speed < 0:
-            self.speed = 0
-
-    def car_run(self, time):
-        self.trip = self.trip + self.speed * time
-
-class race:
-    def __init__(self, race_name, length):
-        self.race_name = race_name
-        self.length = length
-        self.race_cars = []
-
-    def hour_pass(self):
-        for r in self.race_cars:
-            r.accelerate(random.randint(-10, 15))
-            r.car_run(1)
-
-    def print_present_situation(self):
-        for r in self.race_cars:
-            print(f"Car's register number is {r.register_number}")
-            print(f"Car's top speed is {r.top_speed}km/h")
-            print(f"Car's current speed is {r.speed}km/h")
-            print(f"Car's trip is {r.trip}km")
-            print(f"----------------------------------------")
-
-    def race_over(self):
-        for i in self.race_cars:
-            if i >= self.length:
-                race_over = True
-            else:
-                race_over = False
-
-romuralli = race("Suuri romuralli", 100)
+romuralli = race("Suuri romuralli", 1000)
 
 for c in range (9):
     register_number = c + 1
     romuralli.race_cars.append(Car(f"{register_number}", random.randint(100,200), 0, 0))
 
-over = False
-hour = 0
-while r.trip > race.legth:
+while romuralli.race_over() == False:
     romuralli.hour_pass()
-    hour += 1
-    if hour % 10 == 0:
-        romuralli.print_present_situation()
-    over = romuralli.race_over()
-else:
     romuralli.print_present_situation()
+
+''' 
+ylimääräinen kokeilu:
+romuralli.race_over()
+if romuralli.race_over == False:
+    romuralli.hour_pass()
+    romuralli.print_present_situation()
+
+else:
+    romuralli.print_present_situation()'''
