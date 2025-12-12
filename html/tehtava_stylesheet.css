@@ -30,8 +30,6 @@ nav {
 
 ul li a:hover {
     background-color: black;
-
-
 }
 
 
@@ -176,4 +174,34 @@ p {
 .product_image_text{
     opacity: 60%;
 }
+.main_contacts{
+    grid-template-rows: 20% 80%;
+}
+h3 {
+    color: white;
+    font-size: 30px;
+    font-family: Garamond, sans-serif;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.contacts_wraper{
+    display:grid;
+    grid-template-columns: 40% 60%;
+}
+.contacts_div {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.adress_italics{
+    font-family: Garamond, sans-serif, italics;
 
+}
+.adress_bold {
+    font-family: Garamond, sans-serif, bold;
+}
+.map_div{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width:100%;
+
+}
