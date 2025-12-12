@@ -175,33 +175,40 @@ p {
     opacity: 60%;
 }
 .main_contacts{
-    grid-template-rows: 20% 80%;
+    display:grid;
+    grid-template-rows: 10% 90%;
 }
 h3 {
+    width:100%;
     color: white;
     font-size: 30px;
     font-family: Garamond, sans-serif;
     grid-row-start: 1;
     grid-row-end: 2;
+    margin-top: 30px;
 }
 .contacts_wraper{
     display:grid;
     grid-template-columns: 40% 60%;
+    grid-template-rows: auto;
+    margin:30px;
+
 }
 .contacts_div {
     grid-column-start: 1;
     grid-column-end: 2;
 }
 .adress_italics{
-    font-family: Garamond, sans-serif, italics;
+    font-style: italic;
 
 }
 .adress_bold {
-    font-family: Garamond, sans-serif, bold;
+    font-weight: bold;
 }
-.map_div{
+
+iframe {
     grid-column-start: 2;
     grid-column-end: 3;
     width:100%;
-
+    object-fit: cover;
 }
