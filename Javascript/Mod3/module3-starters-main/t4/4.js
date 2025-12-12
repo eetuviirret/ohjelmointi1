@@ -13,3 +13,13 @@ const students = [
     id: '5423679',
   },
 ];
+const targetList = document.getElementById('target');
+
+for  (let i=0; i<students.length; i++) {
+    const bullet = document.createElement('option')
+    bullet.value = students[i].id;
+    bullet.textContent = students[i].name;
+    targetList.appendChild(bullet);
+}
+
+
