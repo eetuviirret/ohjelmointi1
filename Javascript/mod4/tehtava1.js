@@ -36,7 +36,7 @@ async function tvInfo(event){
     const info = await response.json();
 
 
-    document.getElementById('answer').innerHTML = JSON.stringify(info[0]);
+    //document.getElementById('answer').innerHTML = JSON.stringify(info[0]);
     console.log(query_input.value);
     console.log(info[0]);
 
@@ -44,20 +44,39 @@ async function tvInfo(event){
     console.log(name);
     const url = info[0].show.url;
     console.log(url);
-    const image = info[0].show.image.medium;
+    const image = info[0].show.image?.medium;
     console.log(image);
     const summary = info[0].show.summary;
     console.log(summary);
 
+    const print_answer = document.getElementById('print_answer');
+    print_answer.innerHTML = '';
+
     const n = document.createElement('h2');
+    n.textContent = name;
+    print_answer.appendChild(n);
+
+    const br = document.createElement("br");
+    print_answer.appendChild(br);
 
     const u = document.createElement('a');
+    u.href = url;
+    u.textContent = url;
+    u.target = '_blank';
+    print_answer.appendChild(u);
+
+    print_answer.appendChild(document.createElement("br"));
 
     const i = document.createElement('img');                // create img element
-    i.src = image
-    i.alt = 'show_image';
+    i.src = image;
+    i.alt = name;
+    print_answer.appendChild(i);
+
+    print_answer.appendChild(document.createElement("br"));
 
     const s = document.createElement('div');
+    s.textContent = summary;
+    print_answer.appendChild(s);
 
 }
 form.addEventListener('submit', tvInfo);
