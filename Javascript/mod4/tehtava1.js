@@ -24,6 +24,9 @@ collect the elements to <article> elements and append <article> elements to the 
 make <div id="results"> element to the HTML document where you append the <article> elements.
 clear the old results with innerHTML = '' before you append the new results.*/
 
+/*Develop the app even further. Optional chaining is not the best way to handle missing image.
+Use ternary operator or if/else to add a default image if TV-show is missing image property. (2p)*/
+
 'use strict';
 
 let form = document.querySelector('form');
@@ -44,8 +47,14 @@ async function tvInfo(event){
     console.log(name);
     const url = info[0].show.url;
     console.log(url);
-    const image = info[0].show.image?.medium;
+    let image = info[0].show.image?.medium;
+    //let image = "https://placehold.co/210x295?text=Not%20Found";
     console.log(image);
+
+    if (image == null){
+        image = "https://placehold.co/210x295?text=Not%20Found";
+    }
+
     const summary = info[0].show.summary;
     console.log(summary);
 
